@@ -112,7 +112,7 @@ function checkStorage(available, ordered) {
 - Вызов checkStorage(100, 130) возвращает "Not enough goods in stock!"
 ```
 
-# Task 6
+# Task 6 ПРОВЕРКА БАЛАНСА
 
 Станция по продаже ремонтных дроидов готова к запуску, осталось написать программное обеспечение для отдела продаж.
 
@@ -148,4 +148,39 @@ const totalPrice = pricePerDroid * orderedQuantity;
 - Вызов makeTransaction(3000, 5, 23000) возвращает "You ordered 5 droids, you have 8000 credits left"
 - Вызов makeTransaction(500, 10, 5000) возвращает "You ordered 10 droids, you have 0 credits left"
 - Вызов makeTransaction(5000, 10, 8000) возвращает "Insufficient funds!"
+```
+
+# Task СКЛАД ТОВАРОВ 2.0
+
+Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+
+- available - доступное количество товаров на складе
+- ordered - единиц товара в заказе
+
+Используя ветвления дополни код функции так, что:
+
+- Если в заказе еще нет товаров, то есть значение параметра ordered равно 0, в переменную message присваивается строка "There are no products in the order!".
+
+- Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную message присваивается строка "Your order is too large, there are not enough items in stock!".
+
+- В противном случае в переменную message присваевается строка "The order is accepted, our manager will contact you".
+
+```js
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  if (ordered === 0) { 
+    message =  'There are no products in the order!';
+  } else if (ordered > available) {
+    message = 'Your order is too large, there are not enough items in stock!';
+  } else {
+    message = 'The order is accepted, our manager will contact you';
+  }
+  // Change code above this line
+  return message;
+};
+
+- Вызов checkStorage(70, 0) возвращает "There are no products in the order!"
+- Вызов checkStorage(100, 130) возвращает "Your order is too large, there are not enough items in stock!"
+- Вызов checkStorage(100, 50) возвращает "The order is accepted, our manager will contact you"
 ```
