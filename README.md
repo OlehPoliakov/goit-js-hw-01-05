@@ -873,7 +873,7 @@ const atTheOldToad = {
 };
 ```
 
-# Task 8.5 УДАЛЯЕМ ЗЕЛЬЕ
+# Task 8.5 ОБНОВЛЯЕМ ЗЕЛЬЕ
 
 Дополни метод `updatePotionName(oldName, newName)` так, чтобы он обновлял название зелья с `oldName` на `newName`, в массиве зелий в свойстве `potions`.
 
