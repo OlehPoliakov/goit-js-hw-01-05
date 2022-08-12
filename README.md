@@ -252,18 +252,18 @@ function checkPassword(password) {
 
 # Task 10 ДОСТАВКА ТОВАРА
 
-Функция getShippingCost(country) должна проверять возможность доставки товара в страну пользователя (параметр country) и возвращать сообщение о результате хранящееся в переменной message. Обязательно используй инструкцию switch.
+Функция `getShippingCost(country)` должна проверять возможность доставки товара в страну пользователя (параметр country) и возвращать сообщение о результате хранящееся в переменной `message`. Обязательно используй инструкцию `switch`.
 
-Формат возвращаемой строки "Shipping to <country> will cost <price> credits", где вместо <country> и <price> необходимо подставить соотвествующие значения.
+Формат возвращаемой строки `"Shipping to <country> will cost <price> credits"`, где вместо `<country>` и `<price>` необходимо подставить соотвествующие значения.
 
 Список стран и стоимость доставки:
 
-- China - 100 кредитов
-- Chile - 250 кредитов
-- Australia - 170 кредитов
-- Jamaica - 120 кредитов
+- `China` - 100 кредитов
+- `Chile` - 250 кредитов
+- `Australia` - 170 кредитов
+- `Jamaica` - 120 кредитов
 
-Из списка видно, что доставка есть не везде. Если указанной страны нет в списке, то функция должна вернуть строку "Sorry, there is no delivery to your country"
+Из списка видно, что доставка есть не везде. Если указанной страны нет в списке, то функция должна вернуть строку `"Sorry, there is no delivery to your country"`
 
 ```js
 function getShippingCost(country) {
@@ -301,13 +301,13 @@ function getShippingCost(country) {
 
 # Task 11 ФОРМАТИРОВАНИЕ СООБЩЕНИЯ
 
-Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+Функция `formatMessage(message, maxLength)` принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре `maxLength`.
 
 Дополни код функции так, что если длина строки:
 
-- не превышает maxLength, функция возвращает её в исходном виде.
+- не превышает `maxLength`, функция возвращает её в исходном виде.
 
-больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+- больше `maxLength`, то функция обрезает строку до `maxLength` символов и добавляет в конец троеточие `"..."`, после чего возвращает укороченную версию.
 
 ```js
 function formatMessage(message, maxLength) {
@@ -339,6 +339,6 @@ function checkForSpam(message) {
   return false;
 };
 
-- Вызов функции `checkForSpam("Amazing SalE, only tonight!")` возвращает `true`
-- Вызов функции `checkForSpam("Latest technology news")` возвращает `false`
+- Вызов функции checkForSpam("Amazing SalE, only tonight!") возвращает true
+- Вызов функции checkForSpam("Latest technology news") возвращает false
 ```
