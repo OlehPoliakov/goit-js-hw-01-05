@@ -680,3 +680,53 @@ function countTotalSalary(salaries) {
     totalSalary += salary;
 };
 ```
+
+# Task 3 ПОИСК ОБЪЕКТА ПО ЗНАЧЕНИЮ СВОЙСТВА
+
+Напиши функцию `getProductPrice(productName)` которая принимает один параметр `productName` - название продукта. Функция ищет объект продукта с таким именем (свойство `name`) в массиве `products` и возвращает его цену (свойство `price`). Если продукт с таким названием не найден, функция должна возвращать `null`.
+
+```js
+const products = [
+  { name: 'Radar', price: 1300, quantity: 4 },
+  { name: 'Scanner', price: 2700, quantity: 3 },
+  { name: 'Droid', price: 400, quantity: 7 },
+  { name: 'Grip', price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+  for (const item of products)
+    if (item.name === productName)
+      return item.price;
+  return null;
+}
+
+- Вызов getProductPrice("Radar") возвращает 1300.
+```
+
+# Task 4 КОЛЛЕКЦИЯ ЗНАЧЕНИЙ СВОЙСТВА
+
+Напиши функцию `getAllPropValues(propName)` которая принимает один параметр `propName` - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве `products`. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
+```js
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function getAllPropValues(propName) {
+  const valueArray = [];
+   
+  for (const product of products) {
+    if (product.hasOwnProperty(propName)) {
+      valueArray.push(product[propName]);
+    }
+  }
+  return valueArray;
+}
+
+- Вызов getAllPropValues("name") возвращает ["Radar", "Scanner", "Droid", "Grip"]; 
+			("price") возвращает [1300, 2700, 400, 1200] ; 
+			("quantity") возвращает [4, 3, 7, 9];
+			("category") возвращает []
+```
