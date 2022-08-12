@@ -494,3 +494,44 @@ function calculateTotal(number) {
   // Change code above this line
 };
 ```
+
+# Task 8 ПОДСЧЁТ СУММЫ ПОКУПКИ
+
+Напиши функцию `calculateTotalPrice(order)`, которая принимает один параметр `order` - массив чисел, и рассчитывает общую сумму его элементов. Общая сумма элементов должна сохраняться в переменной `total`, которая возвращается, как результат работы функции.
+
+```js
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+
+  for (i = 0; i < order.length; i += 1) { 
+      total += order[i];
+    }
+  // Change code above this line
+  return total;
+};
+```
+
+# Task 9 ПОИСК САМОГО ДЛИННОГО СЛОВА
+
+Напиши функцию `findLongestWord(string)` которая принимает произвольную строку состоящую только из слов разделённых пробелом (параметр `string`) и возвращает самое длинное слово в этой строке.
+
+```js
+function findLongestWord(string) {
+  // Change code below this line
+  
+  let arrStr = string.split(' ');
+  let wordLength = 0;
+  let longestWord;
+
+  for (let i = 0; i < arrStr.length; i += 1) {
+    wordLength = arrStr[1].length;
+
+  if (arrStr[i].length > wordLength) {
+      longestWord = arrStr[i];
+    
+      return longestWord;
+    }
+  }
+};
+```
