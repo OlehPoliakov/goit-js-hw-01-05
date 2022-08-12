@@ -1049,7 +1049,77 @@ const totalAveragePlaytimePerGame = players.reduce((total, number) => {
 }, 0);
 ```
 
-# Task 1 ИМЕНА ПОЛЬЗОВАТЕЛЕЙ//////
+# Этот массив объектов мы будем передавать в параметр users при вызове функции из последующих заданий.
+
+```js
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+```
+
+# Task 6 ИМЕНА ПОЛЬЗОВАТЕЛЕЙ
 
 Дополни функцию `getUserNames(users)` так, чтобы она возвращала массив имён пользователей (свойство `name`) из массива объектов в параметре `users`.
 
@@ -1061,7 +1131,7 @@ const getUserNames = users => {
 };
 ```
 
-# Task 2 ПОЧТЫ ПОЛЬЗОВАТЕЛЕЙ//////
+# Task 7 ПОЧТЫ ПОЛЬЗОВАТЕЛЕЙ
 
 Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
 
@@ -1073,7 +1143,7 @@ const getUserEmails = users => {
 };
 ```
 
-# Task 3 ПОЛЬЗОВАТЕЛИ С ЦВЕТОМ ГЛАЗ//////
+# Task 8 ПОЛЬЗОВАТЕЛИ С ЦВЕТОМ ГЛАЗ
 
 Дополни функцию `getUsersWithEyeColor(users, color)` так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство `eyeColor`) совпадает со значением параметра `color`.
 
@@ -1085,7 +1155,7 @@ const getUsersWithEyeColor = (users, color) => {
 };
 ```
 
-# Task 4 ПОЛЬЗОВАТЕЛИ В ВОЗРАСТНОЙ КАТЕГОРИИ//////
+# Task 9 ПОЛЬЗОВАТЕЛИ В ВОЗРАСТНОЙ КАТЕГОРИИ
 
 Дополни функцию `getUsersWithAge(users, minAge, maxAge)` так, чтобы она возвращала массив пользователей, возраст которых (свойство `age`) попадает в промежуток от `minAge` до `maxAge`.
 
@@ -1097,7 +1167,7 @@ const getUsersWithAge = (users, minAge, maxAge) => {
 };
 ```
 
-# Task 5 ПОЛЬЗОВАТЕЛИ С ДРУГОМ //////
+# Task 10 ПОЛЬЗОВАТЕЛИ С ДРУГОМ
 
 Дополни функцию `getUsersWithFriend(users, friendName)` так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре `friendName`. Массив друзей пользователя хранится в свойстве `friends`.
 
@@ -1109,7 +1179,7 @@ const getUsersWithFriend = (users, friendName) => {
 };
 ```
 
-# Task 6 СПИСОК ДРУЗЕЙ //////
+# Task 11 СПИСОК ДРУЗЕЙ
 
 Дополни функцию `getFriends(users)` так, чтобы она возвращала массив друзей всех пользователей (свойство `friends`). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
 
@@ -1123,7 +1193,7 @@ const getFriends = (users) => {
 };
 ```
 
-# Task 7 АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+# Task 12 АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ
 
 Дополни функцию `getActiveUsers(users)` так, чтобы она возвращала массив активных пользователей, значение свойства `isActive` которых `true`.
 
@@ -1134,7 +1204,7 @@ const getActiveUsers = (users) => {
 };
 ```
 
-# Task 8 НЕАКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+# Task 13 НЕАКТИВНЫЕ ПОЛЬЗОВАТЕЛИ
 
 Дополни функцию `getInactiveUsers(users)` так, чтобы она возвращала массив неактивных пользователей, значение свойства `isActive` которых `false`.
 
@@ -1146,7 +1216,7 @@ const getInactiveUsers = (users) => {
 };
 ```
 
-# Task 9 ПОЛЬЗОВАТЕЛЬ С ПОЧТОЙ //////
+# Task 14 ПОЛЬЗОВАТЕЛЬ С ПОЧТОЙ
 
 Дополни функцию `getUserWithEmail(users, email)` так, чтобы она возвращала объект пользователя, почта которого (свойство `email`) совпадает со значением параметра `email`.
 
@@ -1158,7 +1228,7 @@ const getUserWithEmail = (users, email) => {
 };
 ```
 
-# Task 10 ВСЕ ЛИ ПОЛЬЗОВАТЕЛИ АКТИВНЫ //////
+# Task 15 ВСЕ ЛИ ПОЛЬЗОВАТЕЛИ АКТИВНЫ
 
 Дополни функцию `isEveryUserActive(users)` так, чтобы она проверяла все ли пользователи сейчас активны (свойство `isActive`) и возвращала `true` или `false`.
 
@@ -1170,7 +1240,7 @@ const isEveryUserActive = (users) => {
 };
 ```
 
-# Task 11 ЕСТЬ ЛИ АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+# Task 16 ЕСТЬ ЛИ АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ
 
 Дополни функцию `isAnyUserActive(users)` так, чтобы она проверяла наличие активных пользователей (свойство `isActive`) и возвращала `true` или `false`.
 
@@ -1182,7 +1252,7 @@ const isAnyUserActive = users => {
 };
 ```
 
-# Task 12 ОБЩИЙ БАЛАНС ПОЛЬЗОВАТЕЛЕЙ //////
+# Task 17 ОБЩИЙ БАЛАНС ПОЛЬЗОВАТЕЛЕЙ 
 
 Дополни функцию `calculateTotalBalance(users)` так, чтобы она считала и возвращала сумму всех средств (свойство `balance`) которые хранят пользователи из массива `users`.
 
@@ -1194,7 +1264,7 @@ const calculateTotalBalance = users => {
 };
 ```
 
-# Task 13 ОБЩЕЕ КОЛИЧЕСТВО ДРУЗЕЙ //////
+# Task 18 ОБЩЕЕ КОЛИЧЕСТВО ДРУЗЕЙ
 
 Дополни функцию `getTotalFriendCount(users)` так, чтобы она считала и возвращала общее количество друзей (свойство `friends`) всех пользователей из массива `users`.
 
@@ -1209,7 +1279,7 @@ const getTotalFriendCount = users => {
 };
 ```
 
-# Task 14 СОРТИРОВКА ПО БАЛАНСУ //////
+# Task 19 СОРТИРОВКА ПО БАЛАНСУ
 
 Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса (свойство balance).
 
@@ -1221,7 +1291,7 @@ const sortByAscendingBalance = users => {
 };
 ```
 
-# Task 15  СОРТИРОВКА ПО КОЛИЧЕСТВУ ДРУЗЕЙ //////
+# Task 20  СОРТИРОВКА ПО КОЛИЧЕСТВУ ДРУЗЕЙ
 
 Дополни функцию `sortByDescendingFriendCount(users)` так, чтобы она возвращала массив пользователей отсортированный по убыванию количества их друзей (свойство `friends`).
 
@@ -1230,5 +1300,56 @@ const sortByDescendingFriendCount = users => {
 
   return [...users].sort((a, b) => b.friends.length - a.friends.length);
 
+};
+```
+
+# Task 21  СОРТИРОВКА ПО ИМЕНИ
+
+Дополни функцию `sortByName(users)` так, чтобы она возвращала массив пользователей отсортированный по их имени (свойство `name`) в алфавитном порядке.
+
+```js
+const sortByName = users => {
+
+  return [...users].sort((a, b) => a.name.localeCompare(b.name));
+
+};
+```
+
+# Task 22 ПОЛЬЗОВАТЕЛИ И ДРУЗЬЯ
+
+Дополни функцию `getNamesSortedByFriendCount(users)` так, чтобы она возвращала массив имён пользователей отсортированный по возрастанию количества их друзей (свойство `friends`).
+
+```js
+const getNamesSortedByFriendCount = users => {
+  
+    return [...users]
+        .sort((a, b) => a.friends.length - b.friends.length)
+        .map(user => user.name)
+};
+```
+
+# Task 23 ИМЕНА ДРУЗЕЙ
+
+Дополни функцию `getSortedFriends(users)` так, чтобы она возвращала массив уникальных имён друзей (свойство `friends`) отсортированный по алфавиту .
+
+```js
+const getSortedFriends = users => {
+   return users
+    .flatMap(user => user.friends)
+    .filter((friend, index, array) => array
+    .indexOf(friend) === index)
+    .sort((a, b) => a.localeCompare(b))
+};
+```
+
+# Task 24 ОБЩИЙ БАЛАНС
+
+Дополни функцию `getTotalBalanceByGender(users, gender)` так, чтобы она возвращала общий баланс пользователей (свойство `balance`), пол которых (свойство `gender`) совпадает со значением параметра `gender`.
+
+```js
+const getTotalBalanceByGender = (users, gender) => {
+   return users
+     .filter(user => user.gender === gender)
+    .reduce((total, number) => total + number.balance, 0);
 };
 ```
