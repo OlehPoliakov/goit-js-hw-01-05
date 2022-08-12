@@ -55,7 +55,6 @@ makeMessage('Mango', 3500);
 function calculateTotalPrice (orderedQuantity, pricePerItem) {
   // Change code below this line
   const totalPrice = (orderedQuantity * pricePerItem);
-
   // Change code above this line
   return totalPrice;
 };
@@ -81,4 +80,34 @@ function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
   return message;
 };
 - Вызов makeOrderMessage(2, 100, 50) возвращает "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
+```
+
+# Task 5 СКЛАД ТОВАРОВ
+
+Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+- available - общее количество товаров на складе
+- ordered - единиц товара в заказе
+
+Используя ветвления дополни код функции так, что:
+
+- Если в заказе указано число, превышающее количество товаров на складе, в переменную message записывается строка "Not enough goods in stock!".
+
+- В противном случае записывается строка "Order is processed, our manager will contact you.".
+
+```js
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  if (available >= ordered) { // Change this line
+    message = 'Order is processed, our manager will contact you.';
+  } else {(available < ordered)
+    message = 'Not enough goods in stock!';
+  }
+  // Change code above this line
+  return message;
+};
+
+- Вызов checkStorage(100, 50) возвращает "Order is processed, our manager will contact you."
+- checkStorage(100, 130) возвращает "Not enough goods in stock!"
 ```
