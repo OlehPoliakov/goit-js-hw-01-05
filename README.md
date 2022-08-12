@@ -222,5 +222,30 @@ function getDiscount(totalSpent) {
 };
 
 -Вызов getDiscount(137000) возвращает 0.1; getDiscount(46900) возвращает 0.05; getDiscount(8250) возвращает 0.02; getDiscount(1300) возвращает 0
+```
 
+# Task 9 ПРОВЕРКА ПАРОЛЯ
+
+Функция checkPassword(password) сравнивает переданный ей пароль (параметр password) с сохранённым паролем администратора (константа ADMIN_PASSWORD) и возвращает строку с сообщением о результате.
+
+Используя тернарный оператор дополни функцию так, что:
+
+- Если значения password и ADMIN_PASSWORD совпадают, присвой переменной message строку "Access is allowed".
+
+- В противном случае, присвой message строку "Access denied, wrong password!".
+
+```js
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+
+  message = password === ADMIN_PASSWORD ? "Access is allowed" : "Access denied, wrong password!";
+
+  // Change code above this line
+  return message;
+};
+
+- Вызов checkPassword("jqueryismyjam") возвращает "Access is allowed"
+- Вызов checkPassword("r3actsux") возвращает "Access denied, wrong password!"
 ```
