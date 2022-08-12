@@ -434,7 +434,7 @@ function calculateEngravingPrice(message, pricePerWord) {
 
 Например, вместо того чтобы пользователь увидел в адресной строке `mysite.com/posts/1q8fh74tx`, можно сделать slug из названия статьи. В результате адрес получится более приятным для восприятия: `mysite.com/posts/arrays-for-begginers`.
 
-&nbsp;ВНИМАНИЕ&nbsp;
+! ВНИМАНИЕ !
 Slug это всегда строка в нижнем регистре, слова которой разделены тире.
 
 Напиши функцию `slugify(title)` которая принимает заголовок статьи, параметр `title`, и возвращает `slug`, созданный из этой строки.
@@ -454,4 +454,43 @@ function slugify(title) {
 }
 
 - Вызов slugify("English for developer") возвращает "english-for-developer"
+```
+
+# Task 6 КОМПОЗИЦИЯ МАССИВОВ
+
+Напиши функцию `makeArray(firstArray, secondArray, maxLength)` для создания нового массива со всеми элементами двух исходных `firstArray` и `secondArray`. Параметр maxLength содержит максимально допустимую длину нового массива.
+
+Если количество элементов нового массива больше `maxLength`, функция должна вернуть копию массива длиной `maxLength` элементов. В противном случае функция должна вернуть новый массив целиком.
+
+```js
+function makeArray(firstArray, secondArray, maxLength) {
+    // Change code below this line
+    
+    let allClients = firstArray.concat(secondArray);
+
+    let maxLengthClients = allClients.slice(0,maxLength);
+
+    return maxLengthClients 
+};
+
+- Вызов makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) возвращает ["Mango", "Ajax", "Chelsea"]
+- Вызов makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) возвращает ["Mango", "Poly", "Houston", "Ajax"]
+```
+
+# Task 7 СУММА ЧИСЕЛ (ЦИКЛ FOR)
+
+Напиши функцию `calculateTotal(number)`, которая принимает целое число (параметр `number`) и возвращает сумму всех целых чисел от единицы и до этого числа. Например, если `number` равно `3`, то сумма это `1 + 2 + 3`, то есть `6`.
+
+```js
+function calculateTotal(number) {
+ // Change code below this line
+  let total = 0;
+
+    for (let i = 0; i <= number; i += 1) { 
+      total += i;
+    }
+
+  return total
+  // Change code above this line
+};
 ```
