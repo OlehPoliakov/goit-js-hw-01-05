@@ -949,3 +949,286 @@ const atTheOldToad = {
     },
 };
 ```
+
+# Module 4 "Перебирающие методи масивов."
+
+# Task 1 ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ
+
+Функция `filterArray(numbers, value)` принимает массив чисел `numbers` и возвращает новый массив, в котором будут только те элементы оригинального массива, которые больше чем значение параметра `value`.
+
+Выполни рефакторинг функции так, чтобы вместо цикла `for` она использовала метод `forEach`.
+
+```js
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+
+    numbers.forEach(number => {
+        if (number > value) {
+            filteredNumbers.push(number)
+        }
+    });
+
+  return filteredNumbers;
+};
+
+- Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+```
+
+# Task 2 ОБЩИЕ ЭЛЕМЕНТЫ
+
+Функция `getCommonElements(firstArray, secondArray)` принимает два массива произвольной длины в параметры `firstArray` и `secondArray`, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+
+Выполни рефакторинг функции так, чтобы вместо цикла `for` она использовала метод `forEach`.
+
+```js
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+
+  firstArray.forEach(firstArray => {
+        if (secondArray.includes(firstArray)) {
+            commonElements.push(firstArray);
+        }
+    });
+
+  return commonElements;
+};
+
+- Вызов getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) возвращает [10, 30, 40]
+```
+
+# Task 3 ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ 2.0
+
+Замени объявление функции `filterArray()` и коллбек для метода `forEach()` на стрелочные функции.
+
+```js
+const filterArray = (numbers, value) => {
+  
+  let filteredNumbers = [];
+
+  numbers.forEach((number) => {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  });
+  return filteredNumbers;
+};
+```
+
+# Task 4  ОБЩИЕ ЭЛЕМЕНТЫ 2.0
+
+Замени объявление функции `getCommonElements()` и коллбек для метода `forEach()` на стрелочные функции.
+
+```js
+const getCommonElements = (firstArray, secondArray) => {
+  const commonElements = [];
+
+  firstArray.forEach((element) => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
+    }
+  });
+  return commonElements;
+};
+```
+# Task 5 МЕТОД REDUCE() И МАССИВ ОБЪЕКТОВ 
+
+Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство `playtime`) на количество игр (свойство `gamesPlayed`).
+
+```js
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+
+const totalAveragePlaytimePerGame = players.reduce((total, number) => {
+  return total + number.playtime / number.gamesPlayed;
+}, 0);
+```
+
+# Task 1 ИМЕНА ПОЛЬЗОВАТЕЛЕЙ//////
+
+Дополни функцию `getUserNames(users)` так, чтобы она возвращала массив имён пользователей (свойство `name`) из массива объектов в параметре `users`.
+
+```js
+const getUserNames = users => {
+
+    return users.map(user => user.name);
+    
+};
+```
+
+# Task 2 ПОЧТЫ ПОЛЬЗОВАТЕЛЕЙ//////
+
+Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
+
+```js
+const getUserEmails = users => {
+
+  return users.map(user => user.email);
+
+};
+```
+
+# Task 3 ПОЛЬЗОВАТЕЛИ С ЦВЕТОМ ГЛАЗ//////
+
+Дополни функцию `getUsersWithEyeColor(users, color)` так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство `eyeColor`) совпадает со значением параметра `color`.
+
+```js
+const getUsersWithEyeColor = (users, color) => {
+
+ return users.filter(users => users.eyeColor === color);
+
+};
+```
+
+# Task 4 ПОЛЬЗОВАТЕЛИ В ВОЗРАСТНОЙ КАТЕГОРИИ//////
+
+Дополни функцию `getUsersWithAge(users, minAge, maxAge)` так, чтобы она возвращала массив пользователей, возраст которых (свойство `age`) попадает в промежуток от `minAge` до `maxAge`.
+
+```js
+const getUsersWithAge = (users, minAge, maxAge) => {
+
+  return users.filter (({age}) => age >= minAge && age <= maxAge);
+
+};
+```
+
+# Task 5 ПОЛЬЗОВАТЕЛИ С ДРУГОМ //////
+
+Дополни функцию `getUsersWithFriend(users, friendName)` так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре `friendName`. Массив друзей пользователя хранится в свойстве `friends`.
+
+```js
+const getUsersWithFriend = (users, friendName) => {
+  
+  return users.filter(users => users.friends.indexOf(friendName) !== -1);
+  
+};
+```
+
+# Task 6 СПИСОК ДРУЗЕЙ //////
+
+Дополни функцию `getFriends(users)` так, чтобы она возвращала массив друзей всех пользователей (свойство `friends`). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+
+```js
+const getFriends = (users) => {
+  
+  return users
+        .flatMap(user => user.friends)
+            .filter((friend, index, array) => array
+                .indexOf(friend) === index);
+};
+```
+
+# Task 7 АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+
+Дополни функцию `getActiveUsers(users)` так, чтобы она возвращала массив активных пользователей, значение свойства `isActive` которых `true`.
+
+```js
+const getActiveUsers = (users) => {
+
+    return users.filter(users => users.isActive);
+};
+```
+
+# Task 8 НЕАКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+
+Дополни функцию `getInactiveUsers(users)` так, чтобы она возвращала массив неактивных пользователей, значение свойства `isActive` которых `false`.
+
+```js
+const getInactiveUsers = (users) => {
+   
+  return users.filter(users => users.isActive === false);
+
+};
+```
+
+# Task 9 ПОЛЬЗОВАТЕЛЬ С ПОЧТОЙ //////
+
+Дополни функцию `getUserWithEmail(users, email)` так, чтобы она возвращала объект пользователя, почта которого (свойство `email`) совпадает со значением параметра `email`.
+
+```js
+const getUserWithEmail = (users, email) => {
+  
+   return users.find(users => users.email === email);
+
+};
+```
+
+# Task 10 ВСЕ ЛИ ПОЛЬЗОВАТЕЛИ АКТИВНЫ //////
+
+Дополни функцию `isEveryUserActive(users)` так, чтобы она проверяла все ли пользователи сейчас активны (свойство `isActive`) и возвращала `true` или `false`.
+
+```js
+const isEveryUserActive = (users) => {
+
+  return users.every(users => users.isActive);
+
+};
+```
+
+# Task 11 ЕСТЬ ЛИ АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ //////
+
+Дополни функцию `isAnyUserActive(users)` так, чтобы она проверяла наличие активных пользователей (свойство `isActive`) и возвращала `true` или `false`.
+
+```js
+const isAnyUserActive = users => {
+ 
+  return users.some(users => users.isActive);
+ 
+};
+```
+
+# Task 12 ОБЩИЙ БАЛАНС ПОЛЬЗОВАТЕЛЕЙ //////
+
+Дополни функцию `calculateTotalBalance(users)` так, чтобы она считала и возвращала сумму всех средств (свойство `balance`) которые хранят пользователи из массива `users`.
+
+```js
+const calculateTotalBalance = users => {
+  
+  return users.flatMap(user => user.balance).reduce((total, number) => total + number, 0); 
+
+};
+```
+
+# Task 13 ОБЩЕЕ КОЛИЧЕСТВО ДРУЗЕЙ //////
+
+Дополни функцию `getTotalFriendCount(users)` так, чтобы она считала и возвращала общее количество друзей (свойство `friends`) всех пользователей из массива `users`.
+
+```js
+const getTotalFriendCount = users => {
+
+       const totalFriends = users.reduce((total, user) => {
+        return [...total, ...user.friends];
+    }, []);
+    
+    return totalFriends.length;
+};
+```
+
+# Task 14 СОРТИРОВКА ПО БАЛАНСУ //////
+
+Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса (свойство balance).
+
+```js
+const sortByAscendingBalance = users => {
+
+  return users.sort((firstRating, secondRating) => firstRating.balance - secondRating.balance);
+
+};
+```
+
+# Task 15  СОРТИРОВКА ПО КОЛИЧЕСТВУ ДРУЗЕЙ //////
+
+Дополни функцию `sortByDescendingFriendCount(users)` так, чтобы она возвращала массив пользователей отсортированный по убыванию количества их друзей (свойство `friends`).
+
+```js
+const sortByDescendingFriendCount = users => {
+
+  return [...users].sort((a, b) => b.friends.length - a.friends.length);
+
+};
+```
