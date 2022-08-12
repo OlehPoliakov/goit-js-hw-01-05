@@ -325,17 +325,20 @@ function formatMessage(message, maxLength) {
 
 Функция `checkForSpam(message)` принимает строку (параметр message), проверяет её на содержание запрещенных слов `spam` и `sale`, и возвращает результат проверки. Слова в строке параметра `message` могут быть в произвольном регистре, например `SPAM` или `sAlE`.
 
-- Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
-- Если в строке нет запрещенных слов, функция возвращает буль false.
+- Если нашли запрещенное слово (`spam` или `sale`) то функция возвращает буль `true`.
+- Если в строке нет запрещенных слов, функция возвращает буль `false`.
 
 ```js
-function formatMessage(message, maxLength) {
+function checkForSpam(message) {
   let result;
   // Change code below this line
-  return (message.length <= maxLength) ? message : (message.slice(0, maxLength) + '...') 
-  /// Change code above this line
-  return result;
+  if (message.toLowerCase().includes("sale") || message.toLowerCase().includes("spam"))  {
+    return true;
+  }
+  // Change code above this line
+  return false;
 };
 
-- Вызов функции formatMessage("Vestibulum facilisis purus nec", 20) возвращает "Vestibulum facilisis..."
+- Вызов функции `checkForSpam("Amazing SalE, only tonight!")` возвращает `true`
+- Вызов функции `checkForSpam("Latest technology news")` возвращает `false`
 ```
