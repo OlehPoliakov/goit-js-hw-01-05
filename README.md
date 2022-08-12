@@ -646,3 +646,37 @@ function includes(array, value) {
   // Change code above this line
 };
 ```
+
+# Module 3 "Обьекты. Операции rest/spread"
+
+# Task 1 ПОДСЧЁТ СВОЙСТВ
+
+Напиши функцию `countProps(object)`, которая считает и возвращает количество собственных свойств объекта в параметре `object`. Используй переменную `propCount` для хранения количества свойств объекта.
+
+```js
+function countProps(object) {
+  let propCount = 0;
+  // Change code below this line
+
+    const keys = Object.keys(object);
+    propCount = keys.length;
+
+  // Change code above this line
+  return propCount;
+};
+```
+
+# Task 2 РАСХОДЫ НА ЗАРПЛАТУ
+
+Напиши функцию `countTotalSalary(salaries)` которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную `totalSalary` для хранения общей суммы зарплаты.
+
+```js
+function countTotalSalary(salaries) {
+  let totalSalary = 0;
+  // Change code below this line
+
+  for (const salary of Object.values(salaries)) {
+  
+    totalSalary += salary;
+};
+```
