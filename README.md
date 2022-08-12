@@ -1353,3 +1353,38 @@ const getTotalBalanceByGender = (users, gender) => {
     .reduce((total, number) => total + number.balance, 0);
 };
 ```
+
+# Module 5 "Ключевое слово this. Прототипы и классы"
+
+# Task 1 АККАУНТ ПОЛЬЗОВАТЕЛЯ
+
+Перед увольнением разработчик сломал исходный код управления аккаунтами пользователей нашего сервиса доставки еды. Выполни рефакторинг методов объекта `customer`, расставив отсутствующие `this` при обращении к свойствам объекта.
+
+```js
+  orders: ["Burger", "Pizza", "Salad"],
+  // Change code below this line
+  getBalance() {
+    return this.balance;
+  },
+  getDiscount() {
+    return this.discount;
+  },
+  setDiscount(value) {
+    this.discount = value;
+  },
+  getOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost - cost * this.discount;
+    this.orders.push(order);
+  },
+  // Change code above this line
+};
+
+customer.setDiscount(0.15);
+console.log(customer.getDiscount()); // 0.15
+customer.addOrder(5000, "Steak");
+console.log(customer.getBalance()); // 19750
+console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+```
