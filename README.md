@@ -535,3 +535,54 @@ function findLongestWord(string) {
   }
 };
 ```
+
+# Task 10 ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ
+
+Напиши функцию `filterArray(numbers, value)`, которая принимает массив чисел (параметр `numbers`) и возвращает новый массив, в котором будут только те элементы массива `numbers`, которые больше чем значение параметра `value` (число).
+
+```js
+function filterArray(numbers, value) {
+   // Change code below this line
+ const newArray = [];
+
+  for(let i = 0; numbers.length > i; i++){
+       
+      if (numbers[i]>value){
+      
+       newArray.push(numbers[i])
+      }
+    }
+ return newArray
+  // Change code above this line
+};
+
+- Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+```
+
+# Task 11 ОБЩИЕ ЭЛЕМЕНТЫ
+
+Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
+
+Например, в двух массивах `[1, 3, 5]` и `[0, 8, 5, 3]` общими будут числа `3` и `5`, т.к. они присутствуют в обоих исходных массивах. А числа `0`, `1` и `8` присутствуют только в одном из массивов.
+
+Напиши функцию `getCommonElements(array1, array2)` которая получает два массива произвольной длины в параметры `array1` и `array2`, и возвращает новый массив, состоящий из тех элементов, которые присутствуют в обоих исходных массивах.
+
+```js
+function getCommonElements(array1, array2) {
+  // Change code below this line
+  console.log (array1);
+  console.log (array2);
+
+  const uniquelElement = [];
+  for (const element of array1) {
+    
+    if(array2.includes(element)){
+      uniquelElement.push(element)
+    }
+  }
+  return uniquelElement;
+ // Change code above this line
+};
+
+- Вызов getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) возвращает [12, 27, 3]
+```
