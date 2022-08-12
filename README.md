@@ -40,11 +40,7 @@ function makeMessage (name, price) {
   // Change code above this line
   return message;
 };
-makeMessage('Radar', 6150);
-makeMessage('Scanner', 3500);
-makeMessage('Reactor', 8000);
-makeMessage('Engine', 4070);
-console.log (makeMessage)
+makeMessage('Mango', 3500);
 ```
 # Task 3 МАТЕМАТИЧЕСКИЕ ОПЕРАТОРЫ
 
@@ -64,4 +60,25 @@ function calculateTotalPrice (orderedQuantity, pricePerItem) {
   return totalPrice;
 };
 - Вызов calculateTotalPrice(5, 100) возвращает 500
+```
+
+# Task 4 ЗАКАЗ ПРОДУКТА 2.0
+
+Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
+
+- orderedQuantity - количество дроидов в заказе
+- pricePerDroid - цена одного дроида
+- deliveryFee - стоимость доставки
+
+Дополни код функции так, чтобы она возвращала сообщение о заказе в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь о цене доставки при вычислениях общей стоимости.
+
+```js
+function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+  const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
+  const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+  // Change code above this line
+  return message;
+};
+- Вызов makeOrderMessage(2, 100, 50) возвращает "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
 ```
