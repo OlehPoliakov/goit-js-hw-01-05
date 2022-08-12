@@ -1,6 +1,6 @@
 # Module 1 "Переменные и типы. Разветление. Циклы"
 
-# Task 1
+# Task 1 ЗАКАЗ ПРОДУКТА
 
 Магазин по продаже ремонтных дроидов готов к открытию, осталось написать скрипт для их заказа. Объяви переменные и присвой им соответствующие значения:
 
@@ -24,7 +24,7 @@ console.log (message)
 - Значение переменной message это строка "You ordered droids worth 4850 credits. Delivery (50 credits) is included in total price."
 ```
 
-# Task 2
+# Task 2 ШАБЛОННЫЕ СТРОКИ 
 
 Функция makeMessage(name, price) составляет и возвращает сообщение о покупке. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
 
@@ -45,4 +45,23 @@ makeMessage('Scanner', 3500);
 makeMessage('Reactor', 8000);
 makeMessage('Engine', 4070);
 console.log (makeMessage)
+```
+# Task 3 МАТЕМАТИЧЕСКИЕ ОПЕРАТОРЫ
+
+Функция calculateTotalPrice считает и возвращает общую сумму покупки. Она принимает два параметра, значения которых будут задаваться во время её вызова.
+
+- orderedQuantity - количество единиц товара в заказе;
+- pricePerItem - цена одной единицы товара.
+
+Дополни код функции так, чтобы в переменную totalPrice записывалась общая сумма покупки, результат умножения кол-ва товаров на цену одного.
+
+```js
+function calculateTotalPrice (orderedQuantity, pricePerItem) {
+  // Change code below this line
+  const totalPrice = (orderedQuantity * pricePerItem);
+
+  // Change code above this line
+  return totalPrice;
+};
+- Вызов calculateTotalPrice(5, 100) возвращает 500
 ```
