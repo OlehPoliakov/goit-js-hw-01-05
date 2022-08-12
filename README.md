@@ -11,21 +11,17 @@
 - message - сообщение о состоянии заказа в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."
 
 ```js
-console.log(Account.prototype.getInfo); // function
+// Change code below this line
+const pricePerDroid = 800;
+const orderedQuantity = 6;
+const deliveryFee = 50;
 
-const mango = new Account({
-  login: 'Mangozedog',
-  email: 'mango@dog.woof',
-});
+const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
 
-mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+console.log (message)
 
-const poly = new Account({
-  login: 'Poly',
-  email: 'poly@mail.com',
-});
-
-poly.getInfo(); // Login: Poly, Email: poly@mail.com
+- Значение переменной message это строка "You ordered droids worth 4850 credits. Delivery (50 credits) is included in total price."
 ```
 
 # Задание 2
