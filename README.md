@@ -698,7 +698,7 @@ function getProductPrice(productName) {
     if (item.name === productName)
       return item.price;
   return null;
-}
+};
 
 - Вызов getProductPrice("Radar") возвращает 1300.
 ```
@@ -723,10 +723,229 @@ function getAllPropValues(propName) {
     }
   }
   return valueArray;
-}
+};
 
 - Вызов getAllPropValues("name") возвращает ["Radar", "Scanner", "Droid", "Grip"]; 
 			("price") возвращает [1300, 2700, 400, 1200] ; 
 			("quantity") возвращает [4, 3, 7, 9];
 			("category") возвращает []
+```
+
+# Task 5 ЗАДАЧА. ОБЩАЯ СТОИМОСТЬ ТОВАРА
+
+Напиши функцию `calculateTotalPrice(productName)` которая принимает один параметр `productName` - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива `products`.
+
+```js
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+  function calculateTotalPrice(productName) {
+    
+    for(const product of products){
+      
+    let totalPrice = product.price * product.quantity;
+      
+    	if(productName === product.name){
+      
+    return totalPrice;
+    }
+  }
+    return 0;
+};
+
+- Вызов calculateTotalPrice("Blaster") возвращает 0; 
+			   ("Radar") возвращает 5200; 
+			   ("Grip") возвращает 10800
+```
+
+# Task 6 КАРТОЧКИ ЗАДАЧ
+
+Напиши функцию `makeTask(data)` которая принимает один параметр `data` - объект со следующими свойствами.
+
+- `text` - текст задачи.
+- `category` - категория задачи.
+- `priority` - приоритет задачи.
+
+Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр `data`. В новом объекте должно быть свойство `completed`, значение которого хранится в одноимённой локальной переменной.
+
+В параметре `data` гарантированно будет только свойство `text`, а остальные два, `category` и `priority`, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах `category` и `priority` должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
+
+```js
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+
+      return {...{category, priority, completed},...data};
+  
+  // Change code above this line
+};
+
+- Вызов makeTask({}) возвращает { category: "General", priority: "Normal", completed: false }
+```
+
+# Task 7 МАССИВ СОВПАДЕНИЙ
+
+Функция `findMatches()` принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+
+Дополни код функции так, чтобы она возвращала новый массив `matches`, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+
+Например, `findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)` должна вернуть массив `[1, 2]`, потому что только они есть в массиве первого аргумента.
+
+```js
+function findMatches(numbers, ...args) {
+  const matches = []; 
+    for (const number of numbers) {
+      
+      if (args.includes(number)){
+        matches.push(number);
+      }
+    }
+  return matches;
+};
+
+- Вызов makeTask({}) возвращает { category: "General", priority: "Normal", completed: false }
+```
+
+# Task 8.1 ЛАВКА ЗЕЛИЙ «У СТАРОЙ ЖАБЫ» 
+
+К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту `atTheOldToad` свойство `potions`, значением которого сделай пустой массив.
+
+```js
+const atTheOldToad = {
+
+  potions: []
+
+};
+```
+
+# Task 8.2 ПОЛУЧАЕМ ВСЕ ЗЕЛЬЯ
+
+Добавь объекту `atTheOldToad` метод `getPotions()`, который просто возвращает значение свойства potions.
+
+```js
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+  getPotions() { return this.potions },
+};
+```
+
+# Task 8.3 ДОБАВЛЯЕМ НОВОЕ ЗЕЛЬЕ
+
+Дополни метод `addPotion(potionName)` так, чтобы он добавлял зелье `potionName` в конец массива зелий в свойстве `potions`.
+
+```js
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+  addPotion(potionName) {
+	this.potions.push(potionName)
+  },
+};
+```
+
+# Task 8.4 УДАЛЯЕМ ЗЕЛЬЕ
+
+Дополни метод `addPotion(potionName)` так, чтобы он добавлял зелье `potionName` в конец массива зелий в свойстве `potions`.
+
+```js
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+  removePotion(potionName) {
+  
+    for (let i = 0; i < this.potions.length; i+=1) {
+    
+      if (potionName === this.potions[i]) {
+      
+        console.log('мы нашли такой продукт');
+        
+        this.potions.splice(i, 1)
+      }
+    }
+  },
+};
+```
+
+# Task 8.5 УДАЛЯЕМ ЗЕЛЬЕ
+
+Дополни метод `updatePotionName(oldName, newName)` так, чтобы он обновлял название зелья с `oldName` на `newName`, в массиве зелий в свойстве `potions`.
+
+```js
+const atTheOldToad = {
+
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+  updatePotionName(oldName, newName) {
+
+    const potionsNameIndex = this.potions.indexOf(oldName);
+    
+    this.potions.splice(potionsNameIndex, 1, newName);
+  }
+};
+```
+
+# Task 8.6 РАСШИРЯЕМ ИНВЕНТАРЬ
+
+Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками. Поэтому теперь в свойстве `potions` будет храниться массив объектов со следующими свойствами.
+
+Выполни рефакторинг методов объекта `atTheOldToad` так, чтобы они работали не с массивом строк, а с массивом объектов.
+
+- `getPotions()` - метод для получения всех зелий. Возвращает значение свойства potions.
+
+- `addPotion(newPotion)` - добавляет зелье `newPotion` (уже объект) в массив в свойстве `potions`, но только если такого зелья еще нет в инвентаре. В противном случае возвращается строка.
+
+- `removePotion(potionName)` - удаляет объект зелья с именем `potionName` из массива в свойстве `potions`.
+
+- `updatePotionName(oldName, newName)` - обновляет свойство `name` объекта-зелья с названием `oldName` на `newName` в массиве `potions`.
+
+```js
+const atTheOldToad = {
+    potions: [
+        { name: "Speed potion", price: 460 },
+        { name: "Dragon breath", price: 780 },
+        { name: "Stone skin", price: 520 },
+    ],
+    
+    getPotions() {
+        return this.potions;
+    },
+    
+    addPotion(newPotion) {
+        for (const item of this.potions) {
+                if (item.name === newPotion.name) {
+                    return `Error! Potion ${newPotion.name} is already in your inventory!`;
+                }
+            }
+        this.potions.push(newPotion);
+    },
+    
+    removePotion(potionName) {
+        for (let i = 0; i < this.potions.length; i += 1) {
+        const potion = this.potions[i];
+            if (potionName === potion.name) {
+                this.potions.splice(i, 1);
+            }
+        }
+    },
+    
+    updatePotionName(oldName, newName) {
+        let resalt = `Potion ${oldName} is not in inventory`;
+        for (let i = 0; i < this.potions.length; i += 1) {
+        const potion = this.potions[i];
+
+        if (oldName === potion.name) {
+            potion.name = newName;
+            resalt = `Found ${oldName} change to ${newName} `;
+        }
+      }
+        return console.log(resalt);
+    },
+};
 ```
