@@ -298,3 +298,25 @@ function getShippingCost(country) {
 - Вызов getShippingCost("Australia") возвращает "Shipping to Australia will cost 170 credits"
 - Вызов getShippingCost("Germany") возвращает "Sorry, there is no delivery to your country"
 ```
+
+# Task 11 ФОРМАТИРОВАНИЕ СООБЩЕНИЯ
+
+Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+
+Дополни код функции так, что если длина строки:
+
+- не превышает maxLength, функция возвращает её в исходном виде.
+
+больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+
+```js
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+  return (message.length <= maxLength) ? message : (message.slice(0, maxLength) + '...') 
+  /// Change code above this line
+  return result;
+};
+
+- Вызов функции formatMessage("Vestibulum facilisis purus nec", 20) возвращает "Vestibulum facilisis..."
+```
