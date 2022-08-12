@@ -185,7 +185,7 @@ function checkStorage(available, ordered) {
 - Вызов checkStorage(100, 50) возвращает "The order is accepted, our manager will contact you"
 ```
 
-# Task РАСЧЁТ СКИДКИ
+# Task 8 РАСЧЁТ СКИДКИ
 
 Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег (параметр totalSpent) в магазине за всё время (партнёрская программа). Скидка записывается в переменную discount и возвращается из функции как результат её работы.
 
