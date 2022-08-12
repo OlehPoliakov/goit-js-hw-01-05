@@ -4,11 +4,11 @@
 
 Магазин по продаже ремонтных дроидов готов к открытию, осталось написать скрипт для их заказа. Объяви переменные и присвой им соответствующие значения:
 
-- pricePerDroid - цена одного дроида, значение 800
-- orderedQuantity - количество дроидов в заказе, значение 6
-- deliveryFee - стоимость доставки, значение 50
-- totalPrice - общая сумма заказа к оплате, не забудь о стоимости доставки
-- message - сообщение о состоянии заказа в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."
+- `pricePerDroid` - цена одного дроида, значение `800`
+- `orderedQuantity` - количество дроидов в заказе, значение `6`
+- `deliveryFee` - стоимость доставки, значение `50`
+- `totalPrice` - общая сумма заказа к оплате, не забудь о стоимости доставки
+- `message` - сообщение о состоянии заказа в формате `"You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."`
 
 ```js
 // Change code below this line
@@ -26,12 +26,12 @@ console.log (message)
 
 # Task 2 ШАБЛОННЫЕ СТРОКИ 
 
-Функция makeMessage(name, price) составляет и возвращает сообщение о покупке. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+Функция `makeMessage(name, price)` составляет и возвращает сообщение о покупке. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
 
-- name - название товара
-- price - цена товара
+- `name` - название товара
+- `price` - цена товара
 
-Дополни код функции так, чтобы в переменную message записывалась строка "You picked <product name>, price per item is <product price> credits", где <product name> и <product price> это значения параметров name и price. Используй синтаксис шаблонных строк.
+Дополни код функции так, чтобы в переменную `message` записывалась строка `"You picked <product name>, price per item is <product price> credits"`, где `<product name>` и `<product price>` это значения параметров name и price. Используй синтаксис шаблонных строк.
 
 ```js
 function makeMessage (name, price) {
@@ -42,14 +42,15 @@ function makeMessage (name, price) {
 };
 makeMessage('Mango', 3500);
 ```
+
 # Task 3 МАТЕМАТИЧЕСКИЕ ОПЕРАТОРЫ
 
-Функция calculateTotalPrice считает и возвращает общую сумму покупки. Она принимает два параметра, значения которых будут задаваться во время её вызова.
+Функция `calculateTotalPrice` считает и возвращает общую сумму покупки. Она принимает два параметра, значения которых будут задаваться во время её вызова.
 
-- orderedQuantity - количество единиц товара в заказе;
-- pricePerItem - цена одной единицы товара.
+- `orderedQuantity` - количество единиц товара в заказе;
+- `pricePerItem` - цена одной единицы товара.
 
-Дополни код функции так, чтобы в переменную totalPrice записывалась общая сумма покупки, результат умножения кол-ва товаров на цену одного.
+Дополни код функции так, чтобы в переменную `totalPrice` записывалась общая сумма покупки, результат умножения кол-ва товаров на цену одного.
 
 ```js
 function calculateTotalPrice (orderedQuantity, pricePerItem) {
@@ -63,13 +64,14 @@ function calculateTotalPrice (orderedQuantity, pricePerItem) {
 
 # Task 4 ЗАКАЗ ПРОДУКТА 2.0
 
-Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
+Функция `makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee)` составляет и возвращает сообщение о покупке ремонтных дроидов. Она объявляет три параметра, значения которых будут задаваться во время её вызова.
 
-- orderedQuantity - количество дроидов в заказе
-- pricePerDroid - цена одного дроида
-- deliveryFee - стоимость доставки
+- `orderedQuantity` - количество дроидов в заказе
+- `pricePerDroid` - цена одного дроида
+- `deliveryFee` - стоимость доставки
 
-Дополни код функции так, чтобы она возвращала сообщение о заказе в формате "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь о цене доставки при вычислениях общей стоимости.
+Дополни код функции так, чтобы она возвращала сообщение о заказе в формате `"You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."`. 
+Не забудь о цене доставки при вычислениях общей стоимости.
 
 ```js
 function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
@@ -84,16 +86,16 @@ function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
 
 # Task 5 СКЛАД ТОВАРОВ
 
-Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+Функция `checkStorage(available, ordered)` проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
 
-- available - общее количество товаров на складе
-- ordered - единиц товара в заказе
+- `available` - общее количество товаров на складе
+- `ordered` - единиц товара в заказе
 
 Используя ветвления дополни код функции так, что:
 
-- Если в заказе указано число, превышающее количество товаров на складе, в переменную message записывается строка "Not enough goods in stock!".
+- Если в заказе указано число, превышающее количество товаров на складе, в переменную `message` записывается строка `"Not enough goods in stock!"`.
 
-- В противном случае записывается строка "Order is processed, our manager will contact you.".
+- В противном случае записывается строка `"Order is processed, our manager will contact you."`.
 
 ```js
 function checkStorage(available, ordered) {
@@ -116,19 +118,19 @@ function checkStorage(available, ordered) {
 
 Станция по продаже ремонтных дроидов готова к запуску, осталось написать программное обеспечение для отдела продаж.
 
-Функция makeTransaction(pricePerDroid, orderedQuantity, customerCredits) выполняет транзакцию по продаже дроидов и возвращает сообщение о результате операции. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+Функция `makeTransaction(pricePerDroid, orderedQuantity, customerCredits)` выполняет транзакцию по продаже дроидов и возвращает сообщение о результате операции. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
 
-- pricePerDroid - цена одного дроида
-- orderedQuantity - кол-во заказанных дроидов
-- customerCredits - сумма средств на счету клиента
+- `pricePerDroid` - цена одного дроида
+- `orderedQuantity` - кол-во заказанных дроидов
+- `customerCredits` - сумма средств на счету клиента
 
 Дополни её следующим функционалом:
 
-- Объяви переменную totalPrice для хранения общей суммы заказа и присвой ей выражение расчёта этой суммы.
+- Объяви переменную `totalPrice` для хранения общей суммы заказа и присвой ей выражение расчёта этой суммы.
 
 - Добавь проверку сможет ли клиент оплатить заказ:
--	если сумма к оплате превышает количество кредитов на счету клиента, запиши в переменную message строку "Insufficient funds!";
--	в противном случае, вычти сумму покупки со счёта клиента и запиши в переменную message сообщение: "You ordered <число> droids, you have <число> credits left".
+-	если сумма к оплате превышает количество кредитов на счету клиента, запиши в переменную `message` строку `"Insufficient funds!"`;
+-	в противном случае, вычти сумму покупки со счёта клиента и запиши в переменную `message` сообщение: `"You ordered <число> droids, you have <число> credits left"`.
 
 ```js
 function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
@@ -152,18 +154,18 @@ const totalPrice = pricePerDroid * orderedQuantity;
 
 # Task 7 СКЛАД ТОВАРОВ 2.0
 
-Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
+Функция `checkStorage(available, ordered)` проверяет возможность оформления заказа и возвращает сообщение о результате. Она объявляет два параметра, значения которых будут задаваться во время её вызова.
 
-- available - доступное количество товаров на складе
-- ordered - единиц товара в заказе
+- `available` - доступное количество товаров на складе
+- `ordered` - единиц товара в заказе
 
 Используя ветвления дополни код функции так, что:
 
-- Если в заказе еще нет товаров, то есть значение параметра ordered равно 0, в переменную message присваивается строка "There are no products in the order!".
+- Если в заказе еще нет товаров, то есть значение параметра `ordered` равно 0, в переменную `message` присваивается строка `"There are no products in the order!"`.
 
-- Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную message присваивается строка "Your order is too large, there are not enough items in stock!".
+- Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную `message` присваивается строка `"Your order is too large, there are not enough items in stock!"`.
 
-- В противном случае в переменную message присваевается строка "The order is accepted, our manager will contact you".
+- В противном случае в переменную `message` присваевается строка `"The order is accepted, our manager will contact you"`.
 
 ```js
 function checkStorage(available, ordered) {
