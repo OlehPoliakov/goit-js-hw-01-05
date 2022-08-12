@@ -1388,3 +1388,235 @@ customer.addOrder(5000, "Steak");
 console.log(customer.getBalance()); // 19750
 console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
 ```
+
+# Task 2 ИСТОРИЯ ЗАКАЗОВ
+
+Тестировщики нашли баги в коде сервиса хранения истории заказов еды. Тебе необходимо исправить их, правильно расставив `this` в методах объекта `historyService`, чтобы методы начали работать правильно.
+
+```js
+const historyService = {
+  orders: [
+    { email: "jacob@hotmail.com", dish: "Burrito" },
+    { email: "solomon@topmail.net", dish: "Burger" },
+    { email: "artemis@coldmail.net", dish: "Pizza" },
+    { email: "solomon@topmail.net", dish: "Apple pie" },
+    { email: "jacob@hotmail.com", dish: "Taco" },
+  ],
+  // Change code below this line
+  getOrdersLog() {
+    return this.orders
+        .map(order => `email: ${order.email} dish: ${order.dish}`)
+        .join(" - ");
+    },
+    getEmails() {
+    const emails = this.orders.map(order => order.email);
+    const uniqueEmails = new Set(emails);
+    return [...uniqueEmails];
+    },
+    getOrdersByEmail(email) {
+    return this.orders.filter(order => order.email === email);
+    },
+  // Change code above this line
+};
+```
+
+# Task 3 ЦЕПОЧКА ПРОТОТИПОВ
+
+Измени код, построив цепочку прототипов так, чтобы объект `ancestor` был прототипом для `parent`, а тот в свою очередь был прототипом для `child`.
+
+```js
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
+  heritage: "Irish",
+};
+
+const parent = Object.create(ancestor);
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
+
+const child = Object.create(parent);
+child.name = "Jason";
+child.age = 27;
+```
+
+# Task 4 КОНСТРУКТОР СТРОК
+
+Напиши класс `StringBuilder`, который принимает один параметр `initialValue` - произвольную строку, которая записывается на создаваемый объект в свойство `value`.
+
+Объяви следующие методы класса:
+
+- `getValue()` - возвращает текущее значение свойства value.
+- `padEnd(str)` - получает парметр `str` (строку) и добавляет её в конец значения свойства -`value` объекта который вызывает этот метод.
+- `padStart(str)` - получает парметр `str` (строку) и добавляет её в начало значения свойства `value` объекта который вызывает этот метод.
+- `padBoth(str)` - получает парметр `str` (строку) и добавляет её в начало и в конец значения свойства `value` объекта который вызывает этот метод.
+
+```js
+class StringBuilder {
+  constructor(value) {
+    this.value = value;
+  }
+  getValue() {
+    return this.value;
+  }
+  padStart(str) {
+  this.value = str + this.value;
+  }
+  padEnd(str) {
+    this.value = this.value + str ;
+  }
+  padBoth(str) {
+    this.value = str + this.value + str;
+  }
+}
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+```
+
+# Task 5 СКЛАД 2.0
+
+Выполни рефакторинг класса `Storage`, сделав свойство items приватным.
+
+```js
+class Storage {
+  // Change code below this line
+  #items;
+  constructor(items) {
+    this.#items = items;
+  }
+
+  getItems() {
+    return this.#items;
+  }
+
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(item => item !== itemToRemove);
+  }
+}
+// Change code above this line
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+```
+
+# Task 6 КОНСТРУКТОР СТРОК 2.0
+
+Выполни рефакторинг класса `StringBuilder`, сделав свойство `value` приватным.
+
+```js
+class StringBuilder {
+  // Change code below this line
+  #value;
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+```
+
+# МЕТОДЫ ДОЧЕРНЕГО КЛАССА
+
+В дочернем классе можно объявлять методы, которые будут доступны только его экземплярам.
+
+Добавь классу `Admin` следующие свойства и методы.
+
+- Публичное свойство `blacklistedEmails` для хранения чёрного списка почтовых адресов пользователей. Значение по умолчанию это пустой массив.
+
+- Публичный метод `blacklist(email)` для добавления почты в чёрный список. Метод должен добавлять значение параметра `email` в массив хранящийся в свойстве `blacklistedEmails`.
+
+- Публичный метод `isBlacklisted(email)` для проверки почты в чёрном списке. Метод должен проверять наличие значения параметра email в массиве хранящемся в свойстве `blacklistedEmails` и возвращать `true` или `false`.
+
+```js
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  // Change code below this line
+
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+  
+  constructor({ email, accessLevel, blacklistedEmails = [] }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    this.blacklistedEmails = blacklistedEmails;
+  }
+
+    blacklist(email) {
+    this.blacklistedEmails.push(email) ;
+    }
+
+    isBlacklisted(email) {
+      return this.blacklistedEmails.includes(email)
+    }
+};
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
+```
