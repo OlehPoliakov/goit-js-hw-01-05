@@ -347,7 +347,7 @@ function checkForSpam(message) {
 
 # Module 2 "Масивы. Функции"
 
-# Task 1 ПРОВЕРКА ПАРОЛЯ (РАННИЙ ВОЗВРАТ)
+# Task 1 ПРОВЕРКА ПАРОЛЯ 2.0 (РАННИЙ ВОЗВРАТ)
 
 Функция `checkPassword` получает пароль пользователя в параметр `password`, проверяет его на совпадение с паролем администратора в переменной `ADMIN_PASSWORD` и возвращает сообщение о результате сравнения.
 
@@ -406,4 +406,52 @@ function getExtremeElements(array) {
 - Вызов getExtremeElements([1, 2, 3, 4, 5]) возвращает [1, 5]
 - Вызов getExtremeElements(["Earth", "Mars", "Venus"]) возвращает ["Earth", "Venus"]
 - Вызов getExtremeElements(["apple", "peach", "pear", "banana"]) возвращает ["apple", "banana"]
+```
+
+# Task 4 ГРАВИРОВКА УКРАШЕНИЙ
+
+Сервису гравировки украшений нужна функция, которая бы автоматически считала цену гравировки, в зависимости от количества слов и цены за слово.
+
+Объявлена функция `calculateEngravingPrice(message, pricePerWord)`. Эта функция принимает строку, состоящую из слов разделённых только пробелами (параметр `message`) и цену гравировки одного слова (параметр `pricePerWord`).
+
+Напиши тело функции, чтобы она возвращала общую стоимость гравировки всех слов в строке.
+
+```js
+function calculateEngravingPrice(message, pricePerWord) {
+   // Change code below this line
+
+    if (message) {
+    return message.split(" ").length * pricePerWord;
+  } 
+};
+
+- Вызов calculateEngravingPrice("JavaScript is in my blood", 10) возвращает 50
+```
+
+# Task 5 ГЕНЕРАТОР SLUG
+
+`Термин slug` - это человеко-понятный уникальный идентификатор, который используется в веб-разработке для создания читабельных URL-адесов.
+
+Например, вместо того чтобы пользователь увидел в адресной строке `mysite.com/posts/1q8fh74tx`, можно сделать slug из названия статьи. В результате адрес получится более приятным для восприятия: `mysite.com/posts/arrays-for-begginers`.
+
+&nbsp;ВНИМАНИЕ&nbsp;
+Slug это всегда строка в нижнем регистре, слова которой разделены тире.
+
+Напиши функцию `slugify(title)` которая принимает заголовок статьи, параметр `title`, и возвращает `slug`, созданный из этой строки.
+
+- Значением параметра `title` будут строки, слова которых разделены только пробелами
+- Все символы `slug` должны быть в нижнем регистре
+- Все слова `slug` должна быть разделены тире
+
+
+```js
+function slugify(title) {
+  // Change code below this line
+  
+   return title.toLowerCase().split (" ").join ("-")  
+     
+  // Change code above this line
+}
+
+- Вызов slugify("English for developer") возвращает "english-for-developer"
 ```
