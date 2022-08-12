@@ -344,3 +344,25 @@ function checkForSpam(message) {
 - Вызов функции checkForSpam("Amazing SalE, only tonight!") возвращает true
 - Вызов функции checkForSpam("Latest technology news") возвращает false
 ```
+
+# Module 2 "Масивы. Функции"
+
+# Task 1 ПРОВЕРКА ПАРОЛЯ (РАННИЙ ВОЗВРАТ)
+
+Функция `checkPassword` получает пароль пользователя в параметр `password`, проверяет его на совпадение с паролем администратора в переменной `ADMIN_PASSWORD` и возвращает сообщение о результате сравнения.
+
+
+```js
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  // Change code below this line
+  if (password === ADMIN_PASSWORD) {
+	return  "Welcome!";
+  } 
+	return  "Access denied, wrong password!";
+  }
+  // Change code above this line
+
+- Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
+- Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+```
