@@ -1,5 +1,4 @@
 # Module 1 "Переменные и типы. Разветление. Циклы"
-# Module 2 "Масивы. Функции"
 
 # Task 1 ЗАКАЗ ПРОДУКТА
 
@@ -352,7 +351,6 @@ function checkForSpam(message) {
 
 Функция `checkPassword` получает пароль пользователя в параметр `password`, проверяет его на совпадение с паролем администратора в переменной `ADMIN_PASSWORD` и возвращает сообщение о результате сравнения.
 
-
 ```js
 function checkPassword(password) {
   const ADMIN_PASSWORD = "jqueryismyjam";
@@ -366,4 +364,46 @@ function checkPassword(password) {
 
 - Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
 - Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+```
+
+# Task 2 СКЛАД ТОВАРОВ 3.0 (РАННИЙ ВОЗВРАТ)
+
+Функция `checkStorage` проверяет возможность оформления заказа и возвращает сообщение о результате. Она принимает два параметра, значения которых будут задаваться во время её вызова.
+
+- `available` - доступное количество товаров на складе
+- `ordered` - количество единиц товара в заказе
+
+```js
+function checkStorage(available, ordered) {
+  // Change code below this line
+  if (ordered === 0) {
+      return "Your order is empty!";
+  } if (ordered > available) {
+	return "Your order is too large, not enough goods in stock!";
+  } 
+	return "The order is accepted, our manager will contact you";
+  // Change code above this line
+};
+
+- Вызов checkStorage(70, 0) возвращает "Your order is empty!"
+- Вызов checkStorage(100, 130) возвращает "Your order is too large, not enough goods in stock!"
+- Вызов checkStorage(100, 50) возвращает "The order is accepted, our manager will contact you"
+```
+
+# Task 3 КРАЙНИЕ ЭЛЕМЕНТЫ МАССИВА
+
+Напиши функцию `getExtremeElements(array)` которая принимает один параметр `array` - массив элементов произвольной длины. Функция должна возвращать массив из двух элементов - первого и последнего элемента параметра `array`.
+
+```js
+function getExtremeElements(array) {
+  // Change code below this line
+  
+    return [array[0], array[array.length -1]];
+    
+  // Change code above this line
+}
+
+- Вызов getExtremeElements([1, 2, 3, 4, 5]) возвращает [1, 5]
+- Вызов getExtremeElements(["Earth", "Mars", "Venus"]) возвращает ["Earth", "Venus"]
+- Вызов getExtremeElements(["apple", "peach", "pear", "banana"]) возвращает ["apple", "banana"]
 ```
