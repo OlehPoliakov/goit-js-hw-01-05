@@ -586,3 +586,63 @@ function getCommonElements(array1, array2) {
 
 - Вызов getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) возвращает [12, 27, 3]
 ```
+
+# Task 12 ФИЛЬТРАЦИЯ МАССИВА ЧИСЕЛ 2.0
+
+Выполни рефакторинг функции `filterArray(numbers, value)` заменив цикл `for на for...of`.
+
+```js
+function filterArray(numbers, value) {
+
+  const filteredNumbers = [];
+  
+    for (const number of numbers) {
+
+        if (number > value) {
+            filteredNumbers.push(number);
+        }
+    }
+  return filteredNumbers;
+};
+```
+
+# Task 13 ЧЁТНЫЕ ЧИСЛА
+
+Напиши функцию `getEvenNumbers(start, end)` которая возвращает массив всех чётных чисел от `start` до `end`. Чётным считается число которое делится на `2` без остатка (`10 % 2 === 0`).
+
+```js
+ function getEvenNumbers(start, end) {
+ 
+   const numbers = [];
+   
+    for(let i = start;  i <= end; i+= 1){
+       console.log (i)
+
+      if (i % 2 === 0){
+        numbers.push(i)   
+      }
+   }
+  return numbers;
+};
+```
+
+# Task 14 ФУНКЦИЯ INCLUDES()
+
+Напиши функцию `includes(array, value)`, которая делает тоже самое, что и метод массива `массив.includes(значение)` - проверяет, есть ли в массиве `array` значение `value`, возвращая `true` если есть и `false` в противном случае.
+
+При выполнении этой задачи в теле функции `includes()` нельзя использовать метод `массив.includes(значение)`.
+
+```js
+function includes(array, value) {
+  // Change code below this line
+  
+    for (let i = 0; i < array.length; i += 1) {
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false;
+    
+  // Change code above this line
+};
+```
